@@ -7,7 +7,7 @@ public class MainClass {
 		ierakstisana.writeToFile("text");
 
 		FailaNolasisana failaNolasisana = new FailaNolasisana();
-		String s = failaNolasisana.readFile("text");
+		//String s = failaNolasisana.readFile("text");
 		System.out.println();
 		System.out.println("No MainClass");
 		System.out.println(failaNolasisana.readFile("text"));

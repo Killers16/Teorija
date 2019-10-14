@@ -1,10 +1,13 @@
 package lv.jak.artjoms.datnes;
 
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
+
 
 public class FailaNolasisana {
 	public String readFile(String fileName) {
@@ -15,11 +18,12 @@ public class FailaNolasisana {
 			BufferedReader br = new BufferedReader(fr);
 			
 			String line = null;
-			
+		
 			while ((line = br.readLine()) !=null) {
 				System.out.println(line);
 				teksts += line +"\n";
 			}
+			br.close();
 		}
 			catch (FileNotFoundException e) {
 				System.out.print("Nav izveleta faila!");
