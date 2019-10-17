@@ -1,6 +1,10 @@
 package lv.jak.artjoms.formas;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -8,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 
@@ -29,33 +34,71 @@ public class Forma extends JFrame {
 	
 	//Apraksta formas parametrus ,izmatojot konstruktorfunkciju
 	public Forma() {
-		setBounds(1100, 150, 500, 300);
+		setBounds(900, 150, 500, 300);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Pirma Forma");
 		
 		
+		init();
 		
 		setContentPane(panel);
 		
 	}
 	public void init() {
-		panel = new JPanel(new BorderLayout());
+		panel = new JPanel(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
 		
-		JPanel topJPanel = new JPanel(null);
+		//Formas augšeja daļa 
+		JPanel topPanel = new JPanel(new BorderLayout(10,10));
+		
 		
 		enterNameL = new JLabel("Enter a name");
-		enterNameL.setBounds(10, 10, 150, 30);
-		
+			
 		enterNameTF = new JTextField();
-		enterNameTF.setBounds(170, 10, 230, 30);
-
 		
 		addBTN = new JButton("add");
-		addBTN.setBounds(410, 10, 70, 30);
 		
 		
-		topJPanel.add(enterNameL);
-		topJPanel.add(enterNameTF);
+		
+		topPanel.add(enterNameL,BorderLayout.WEST);
+		topPanel.add(enterNameTF,BorderLayout.CENTER);
+		topPanel.add(addBTN,BorderLayout.EAST);
+		
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx= 0;
+		c.gridy= 0;
+		
+		panel.add(topPanel,c);
+		//-------------------------------------
+		
+		//Formas centrs
+		
+		listedNames= new JList<String>(model);
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx= 0;
+		c.gridy= 1;
+		
+		panel.add(new JScrollPane(listedNames),c);
+		//--------------------------------------
+		
+		//Formas apakša
+		JPanel bottomPanel = new JPanel(new BorderLayout());
+		
+		ClearBTN = new JButton("Clear");
+		
+		bottomPanel.add(ClearBTN, BorderLayout.EAST);
+		
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx= 0;
+		c.gridy= 2;
+		
+		panel.add(bottomPanel,c);
+		//--------------------------------------
+		
+		
+		
+		
+		
 		
 		
 	}
