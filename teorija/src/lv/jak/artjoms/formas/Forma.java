@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-
+import java.awt.Insets;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -37,6 +37,7 @@ public class Forma extends JFrame {
 		setBounds(900, 150, 500, 300);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Pirma Forma");
+		setResizable(false);
 		
 		
 		init();
@@ -65,6 +66,7 @@ public class Forma extends JFrame {
 		topPanel.add(addBTN,BorderLayout.EAST);
 		
 		c.fill = GridBagConstraints.HORIZONTAL;
+		c.insets = new Insets(-50, -230, 0, -230);
 		c.gridx= 0;
 		c.gridy= 0;
 		
@@ -75,6 +77,7 @@ public class Forma extends JFrame {
 		
 		listedNames= new JList<String>(model);
 		c.fill = GridBagConstraints.HORIZONTAL;
+		c.insets = new Insets(0, -230, 0, -230);
 		c.gridx= 0;
 		c.gridy= 1;
 		
@@ -89,6 +92,7 @@ public class Forma extends JFrame {
 		bottomPanel.add(ClearBTN, BorderLayout.EAST);
 		
 		c.fill = GridBagConstraints.HORIZONTAL;
+		c.insets = new Insets(0, -230, -80, -230);
 		c.gridx= 0;
 		c.gridy= 2;
 		

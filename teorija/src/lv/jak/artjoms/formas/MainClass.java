@@ -4,7 +4,7 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		
-		Forma frame = new Forma();
+		FormaNoLayout frame = new FormaNoLayout();
 		frame.setVisible(true);
 
 	}
