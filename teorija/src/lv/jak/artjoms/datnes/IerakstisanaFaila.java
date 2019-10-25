@@ -7,7 +7,7 @@ import java.io.IOException;
 public class IerakstisanaFaila {
 
 		
-		public void writeToFile(String fileName ) {
+		public static void writeToFile(String fileName , String text ) {
 			File file = new File(fileName);
 			
 			
@@ -23,8 +23,7 @@ public class IerakstisanaFaila {
 				//fw 	= new FileWriter(file,true);
 				
 			fw 	= new FileWriter(file,true);
-			fw.write("Sis ir piemērs \nsatura ierakstīšanai failā!");
-			String text = "564sd6f4s";
+			
 			fw.write(text+"\n");
 			fw.flush();
 			
