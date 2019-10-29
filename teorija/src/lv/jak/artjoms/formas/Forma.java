@@ -34,30 +34,30 @@ public class Forma extends JFrame {
 	
 	//Apraksta formas parametrus ,izmatojot konstruktorfunkciju
 	public Forma() {
-		setBounds(900, 150, 500, 300);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setTitle("Pirma Forma");
-		setResizable(false);
+		setBounds(900, 150, 500, 300);//iedodam izmeru formai
+		setDefaultCloseOperation(EXIT_ON_CLOSE);//nosakam kas uzpiedisim krustu ,forma izsleksies un neveiks procesu
+		setTitle("Pirma Forma");//Galvenais nosaukums formai
+		setResizable(false);//lielotajs nevares uzllitk uz pilnu ekranu logu vai vares nosaka false vai true
 		
 		
-		init();
+		init();//izsauc metodi init
 		
-		setContentPane(panel);
+		setContentPane(panel);//izveido paneļi un izmerus formai 
 		
 	}
-	public void init() {
-		panel = new JPanel(new GridBagLayout());
-		GridBagConstraints c = new GridBagConstraints();
+	public void init() {//izveidota metode ar neatgriežamo vertību
+		panel = new JPanel(new GridBagLayout());//panelim  iedot parametrus 
+		GridBagConstraints c = new GridBagConstraints(); //izveido metodi ar nosaukumu c
 		
 		//Formas augšeja daļa 
-		JPanel topPanel = new JPanel(new BorderLayout(10,10));
+		JPanel topPanel = new JPanel(new BorderLayout(10,10));//izveido metodi ar nosaukumu topPanel un piešķir parametru
 		
 		
-		enterNameL = new JLabel("Enter a name");
+		enterNameL = new JLabel("Enter a name");//enterNameL  piešķir nosacijumu JLabelam
 			
-		enterNameTF = new JTextField();
+		enterNameTF = new JTextField();//izveido metodi ar nosaukumu enterNameTF 
 		
-		addBTN = new JButton("add");
+		addBTN = new JButton("add");//enterNameL  piešķir nosacijumu piešķir nosacijumu JButton
 		
 		
 		
