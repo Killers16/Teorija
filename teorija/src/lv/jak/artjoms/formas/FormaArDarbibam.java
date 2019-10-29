@@ -115,16 +115,11 @@ public class FormaArDarbibam extends JFrame implements ActionListener{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (!selectedModel.isEmpty() && !selectedList.isSelectionEmpty()) {
-					int index = availableList.getSelectedIndex();
-					
-					String topic = availableModel.get(index);
-					selectedModel.addElement(topic);
-					availableModel.remove(index);
-					
+				availableModel.addElement(topicTF.getText());
+				topicTF.setText(" ");
 				}
-			}
-		});
+			
+	});
 		
 		removeBTN = new JButton("Remove");
 		removeBTN.setBounds(120, 510, 110, 30);
@@ -176,9 +171,9 @@ public class FormaArDarbibam extends JFrame implements ActionListener{
 				}
 				availableModel.clear();
 			}
-			if(e.getSource()==toSelectedBTN) {
+			else if(e.getSource()==toSelectedBTN) {
 				System.out.println("Nospied >");
-				if (!selectedModel.isEmpty() && !selectedList.isSelectionEmpty()) {
+				if (!availableModel.isEmpty() && !availableList.isSelectionEmpty()) {
 					int index = availableList.getSelectedIndex();
 					String topic = availableModel.get(index);
 					selectedModel.addElement(topic);
@@ -187,9 +182,9 @@ public class FormaArDarbibam extends JFrame implements ActionListener{
 					
 				}
 			}
-			if(e.getSource()==allToAvailableBTN) {
+			else if(e.getSource()==toAvailableBTN) {
 				System.out.println("Nospied <");
-				if (!selectedModel.isEmpty() && !selectedList.isSelectionEmpty()) {
+				 if (!selectedModel.isEmpty() && !selectedList.isSelectionEmpty()) {
 					int index = selectedList.getSelectedIndex();
 					String topic = selectedModel.get(index);
 					availableModel.addElement(topic);
