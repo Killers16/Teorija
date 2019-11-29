@@ -1,0 +1,13 @@
+String dati[] = { ID, Vards, Uzvards, Kurss, Tēma, Datums, E-pasts, Skolotaja Epasts };
+		
+		
+		
+		int rownum = 0;
+		int cellnum = 0;
+		int lastRow = sheet.getLastRowNum();
+		XSSFRow row = sheet.createRow(lastRow+1);
+		for(String s dati) {
+			Cell cell = row.createCell(cellnum++);
+			cell.setCellValue(s);
+		}
+		
